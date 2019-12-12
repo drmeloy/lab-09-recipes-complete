@@ -38,7 +38,7 @@ describe('attempt routes', () => {
       .post('/api/v1/attempts')
       .send({
         recipeId: recipe._id,
-        dateOfAttempt: 'December 5th, 2019',
+        dateOfAttempt: new Date('2019-12-12T00:00:00'),
         notes: 'Soooo good',
         rating: 5
       })
@@ -46,7 +46,7 @@ describe('attempt routes', () => {
         expect(res.body).toEqual({
           _id: expect.any(String),
           recipeId: recipe._id.toString(),
-          dateOfAttempt: 'December 5th, 2019',
+          dateOfAttempt: JSON.parse(JSON.stringify(new Date('2019-12-12T00:00:00'))),
           notes: 'Soooo good',
           rating: 5,
           __v: 0
@@ -58,19 +58,19 @@ describe('attempt routes', () => {
     const attempts = await Attempt.create([
       {
         recipeId: recipe._id,
-        dateOfAttempt: 'December 5th, 2019',
+        dateOfAttempt: new Date('2019-12-12T00:00:00'),
         notes: 'Soooo good',
         rating: 5
       },
       {
         recipeId: recipe._id,
-        dateOfAttempt: 'December 6th, 2019',
+        dateOfAttempt: new Date('2019-12-12T00:00:00'),
         notes: 'Pretty good',
         rating: 3
       },
       {
         recipeId: recipe._id,
-        dateOfAttempt: 'December 7th, 2019',
+        dateOfAttempt: new Date('2019-12-12T00:00:00'),
         notes: 'Soooo bad',
         rating: 1
       }
@@ -83,7 +83,7 @@ describe('attempt routes', () => {
           expect(res.body).toContainEqual({
             _id: attempt._id.toString(),
             recipeId: recipe._id.toString(),
-            dateOfAttempt: attempt.dateOfAttempt,
+            dateOfAttempt: JSON.parse(JSON.stringify(attempt.dateOfAttempt)),
             notes: attempt.notes,
             rating: attempt.rating,
             __v: 0
@@ -95,7 +95,7 @@ describe('attempt routes', () => {
   it('gets an attempt by id with GET/:id', async() => {
     const attempt = await Attempt.create({
       recipeId: recipe._id,
-      dateOfAttempt: 'December 5th, 2019',
+      dateOfAttempt: new Date('2019-12-12T00:00:00'),
       notes: 'Soooo good',
       rating: 5
     });
@@ -106,7 +106,7 @@ describe('attempt routes', () => {
         expect(res.body).toEqual({
           _id: expect.any(String),
           recipeId: JSON.parse(JSON.stringify(recipe)),
-          dateOfAttempt: 'December 5th, 2019',
+          dateOfAttempt: JSON.parse(JSON.stringify(attempt.dateOfAttempt)),
           notes: 'Soooo good',
           rating: 5,
           __v: 0
@@ -117,7 +117,7 @@ describe('attempt routes', () => {
   it('updates an item by id with PATCH/:id', async() => {
     const attempt = await Attempt.create({
       recipeId: recipe._id,
-      dateOfAttempt: 'December 5th, 2019',
+      dateOfAttempt: new Date('2019-12-12T00:00:00'),
       notes: 'Soooo good',
       rating: 5
     });
@@ -129,7 +129,7 @@ describe('attempt routes', () => {
         expect(res.body).toEqual({
           _id: attempt._id.toString(),
           recipeId: recipe._id.toString(),
-          dateOfAttempt: 'December 5th, 2019',
+          dateOfAttempt: JSON.parse(JSON.stringify(attempt.dateOfAttempt)),
           notes: 'Actually it was bad',
           rating: 1,
           __v: 0
@@ -140,7 +140,7 @@ describe('attempt routes', () => {
   it('deletes an item by id with DELETE/:id', async() => {
     const attempt = await Attempt.create({
       recipeId: recipe._id,
-      dateOfAttempt: 'December 5th, 2019',
+      dateOfAttempt: new Date('2019-12-12T00:00:00'),
       notes: 'Soooo good',
       rating: 5
     });
@@ -151,7 +151,7 @@ describe('attempt routes', () => {
         expect(res.body).toEqual({
           _id: attempt._id.toString(),
           recipeId: recipe._id.toString(),
-          dateOfAttempt: 'December 5th, 2019',
+          dateOfAttempt: JSON.parse(JSON.stringify(attempt.dateOfAttempt)),
           notes: 'Soooo good',
           rating: 5,
           __v: 0

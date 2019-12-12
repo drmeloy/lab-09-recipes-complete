@@ -20,31 +20,31 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">88.24% </span>
+        <span class="strong">23.53% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>15/17</span>
+        <span class='fraction'>4/17</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>0/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">80% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>8/10</span>
+        <span class='fraction'>0/10</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">88.24% </span>
+        <span class="strong">23.53% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>15/17</span>
+        <span class='fraction'>4/17</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -86,38 +86,38 @@
 <a name='L38'></a><a href='#L38'>38</a>
 <a name='L39'></a><a href='#L39'>39</a>
 <a name='L40'></a><a href='#L40'>40</a>
-<a name='L41'></a><a href='#L41'>41</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L41'></a><a href='#L41'>41</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -131,33 +131,33 @@ const Recipe = require('../models/Recipe');
 const Attempt = require('../models/Attempt');
 &nbsp;
 module.exports = Router()
-  .post('/', (req, res) =&gt; {
-    Recipe
+  .post('/', <span class="fstat-no" title="function not covered" >(r</span>eq, res) =&gt; {
+<span class="cstat-no" title="statement not covered" >    Recipe</span>
       .create(req.body)
-      .then(recipe =&gt; res.send(recipe));
+      .then(<span class="fstat-no" title="function not covered" >re</span>cipe =&gt; <span class="cstat-no" title="statement not covered" >res.send(recipe))</span>;
   })
-  .get('/', (req, res) =&gt; {
-    let query = {};
-    if(req.query.ingredient){
-      query = { 'ingredients.name': req.query.ingredient };
+  .get('/', <span class="fstat-no" title="function not covered" >(r</span>eq, res) =&gt; {
+    let query = <span class="cstat-no" title="statement not covered" >{};</span>
+<span class="cstat-no" title="statement not covered" >    if(req.query.ingredient){</span>
+<span class="cstat-no" title="statement not covered" >      query = { 'ingredients.name': req.query.ingredient };</span>
     }
-    Recipe
+<span class="cstat-no" title="statement not covered" >    Recipe</span>
       .find(query)
-      .then(recipes =&gt; res.send(recipes));
+      .then(<span class="fstat-no" title="function not covered" >re</span>cipes =&gt; <span class="cstat-no" title="statement not covered" >res.send(recipes))</span>;
   })
-  .get('/:id', (req, res) =&gt; {
-    Promise.all([
+  .get('/:id', <span class="fstat-no" title="function not covered" >(r</span>eq, res) =&gt; {
+<span class="cstat-no" title="statement not covered" >    Promise.all([</span>
       Recipe.findById(req.params.id),
       Attempt.find({ recipeId: req.params.id })
     ])
-      .then(([recipe, attempts]) =&gt; {
-        res.send({ ...recipe.toJSON(), attempts });
+      .then(<span class="fstat-no" title="function not covered" >([</span>recipe, attempts]) =&gt; {
+<span class="cstat-no" title="statement not covered" >        res.send({ ...recipe.toJSON(), attempts });</span>
       });
   })
-  .patch('/:id', (req, res) =&gt; {
-    Recipe
+  .patch('/:id', <span class="fstat-no" title="function not covered" >(r</span>eq, res) =&gt; {
+<span class="cstat-no" title="statement not covered" >    Recipe</span>
       .findByIdAndUpdate(req.params.id, req.body, { new: true })
-      .then(recipe =&gt; res.send(recipe));
+      .then(<span class="fstat-no" title="function not covered" >re</span>cipe =&gt; <span class="cstat-no" title="statement not covered" >res.send(recipe))</span>;
   })
   .delete('/:id', <span class="fstat-no" title="function not covered" >(r</span>eq, res) =&gt; {
 <span class="cstat-no" title="statement not covered" >    Promise.all([</span>
@@ -172,7 +172,7 @@ module.exports = Router()
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Dec 12 2019 16:12:09 GMT-0700 (Mountain Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Dec 12 2019 16:23:40 GMT-0700 (Mountain Standard Time)
 </div>
 </div>
 <script src="..\..\prettify.js"></script>

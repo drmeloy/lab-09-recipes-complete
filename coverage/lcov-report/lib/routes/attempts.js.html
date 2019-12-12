@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">30.77% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>4/13</span>
+        <span class='fraction'>13/13</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,21 +30,21 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">10% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/10</span>
+        <span class='fraction'>10/10</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">30.77% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>4/13</span>
+        <span class='fraction'>13/13</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -76,35 +76,35 @@
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const { Router } = require('express');
 const Attempt = require('../models/Attempt');
@@ -113,28 +113,28 @@ module.exports = Router()
   .post('/', (req, res) =&gt; {
     Attempt
       .create(req.body)
-      .then(<span class="fstat-no" title="function not covered" >at</span>tempt =&gt; <span class="cstat-no" title="statement not covered" >res.send(attempt))</span>;
+      .then(attempt =&gt; res.send(attempt));
   })
-  .get('/', <span class="fstat-no" title="function not covered" >(r</span>eq, res) =&gt; {
-<span class="cstat-no" title="statement not covered" >    Attempt</span>
+  .get('/', (req, res) =&gt; {
+    Attempt
       .find()
-      .then(<span class="fstat-no" title="function not covered" >at</span>tempts =&gt; <span class="cstat-no" title="statement not covered" >res.send(attempts))</span>;
+      .then(attempts =&gt; res.send(attempts));
   })
-  .get('/:id', <span class="fstat-no" title="function not covered" >(r</span>eq, res) =&gt; {
-<span class="cstat-no" title="statement not covered" >    Attempt</span>
+  .get('/:id', (req, res) =&gt; {
+    Attempt
       .findById(req.params.id)
       .populate('recipeId')
-      .then(<span class="fstat-no" title="function not covered" >at</span>tempt =&gt; <span class="cstat-no" title="statement not covered" >res.send(attempt))</span>;
+      .then(attempt =&gt; res.send(attempt));
   })
-  .patch('/:id', <span class="fstat-no" title="function not covered" >(r</span>eq, res) =&gt; {
-<span class="cstat-no" title="statement not covered" >    Attempt</span>
+  .patch('/:id', (req, res) =&gt; {
+    Attempt
       .findByIdAndUpdate(req.params.id, req.body, { new: true })
-      .then(<span class="fstat-no" title="function not covered" >at</span>tempt =&gt; <span class="cstat-no" title="statement not covered" >res.send(attempt))</span>;
+      .then(attempt =&gt; res.send(attempt));
   })
-  .delete('/:id', <span class="fstat-no" title="function not covered" >(r</span>eq, res) =&gt; {
-<span class="cstat-no" title="statement not covered" >    Attempt</span>
+  .delete('/:id', (req, res) =&gt; {
+    Attempt
       .findByIdAndDelete(req.params.id)
-      .then(<span class="fstat-no" title="function not covered" >at</span>tempt =&gt; <span class="cstat-no" title="statement not covered" >res.send(attempt))</span>;
+      .then(attempt =&gt; res.send(attempt));
   });
 &nbsp;</pre></td></tr>
 </table></pre>
@@ -142,7 +142,7 @@ module.exports = Router()
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Dec 12 2019 16:12:09 GMT-0700 (Mountain Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Dec 12 2019 16:23:40 GMT-0700 (Mountain Standard Time)
 </div>
 </div>
 <script src="..\..\prettify.js"></script>
