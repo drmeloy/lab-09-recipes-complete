@@ -121,7 +121,7 @@ describe('recipes routes', () => {
     return request(app)
       .get(`/api/v1/recipes/${recipe._id}`)
       .then(recipe => {
-        expect(recipe.body).toEqual({
+        expect(recipe.body).toMatchObject({
           _id: expect.any(String),
           name: 'cookies',
           ingredients: [
@@ -144,7 +144,7 @@ describe('recipes routes', () => {
             'put dough on cookie sheet',
             'bake for 10 minutes'
           ],
-          attempts: [],
+          attempts: JSON.parse(JSON.stringify([])),
           __v: 0
         });
       });
