@@ -230,7 +230,7 @@ describe('recipes routes', () => {
 
     await Attempt.create({
       recipeId: recipe._id,
-      dateOfAttempt: 'today',
+      dateOfAttempt: new Date('2019-12-12T00:00:00'),
       notes: 'yum',
       rating: 5
     });
